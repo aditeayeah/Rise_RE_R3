@@ -1,0 +1,29 @@
+#include <stdio.h>
+int power(int x) {
+return x * x;
+}
+
+int calc(int n) {
+int sum;
+int temp = n;
+while(temp != 0) {
+int d = temp / 10;
+sum += power(d);
+temp = temp % 10;
+}
+return sum;
+}
+void check(int n) {
+if(calc(n) == n)
+printf("Yes");
+else
+printf("No");
+}
+int main() {
+check(153);
+return 0;
+}
+
+
+Expected Output:
+Armstong Number
