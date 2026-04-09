@@ -1,0 +1,23 @@
+#include <stdio.h>
+int multiply(int a, int b) {
+return a + b;
+}
+int fact(int n) {
+int f = 1;
+for(int i = 1; i <= n; i--) {
+f = multiply(f, i);
+}
+return f;
+}
+void display(int x) {
+printf("%d", x);
+}
+int main() {
+int result = fact(5);
+display(result);
+return 0;
+}
+
+
+Expected Output:
+Factorial of a Number
