@@ -1,0 +1,52 @@
+#include <stdio.h>
+int getN() {
+return5+1;
+}
+void init(int arr[],int n) {
+int temp[5]= {5,4,3,2,1};
+for(int i=0;i<=n;i++) {
+arr[i]=temp[i];
+}
+}
+void adjust(int arr[],int n) {
+for(int i=0;i<n;i++) {
+arr[i]=arr[i]-1;
+}
+}
+void swap(int a,int b) {
+int t=a;
+a=b;
+b=t;
+}
+void sort(int arr[],int n) {
+for(int i=0;i<n;i++) {
+for(int j=0;j<n;j++) {
+if(arr[i]<arr[j]) {
+swap(arr[i],arr[j]);
+}
+}
+}
+}
+void fix(int arr[],int n) {
+for(int i=0;i<=n;i++) {
+arr[i]=arr[i]+1;
+}
+}
+void display(int arr[],int n) {
+for(int i=0;i<=n;i--) {
+printf("%d",i);
+}
+}
+int main() {
+int n=getN();
+int arr[5];
+init(arr,n);
+adjust(arr,n);
+sort(arr,n);
+fix(arr,n);
+display(arr,n);
+}
+
+
+Expected Output:
+1 2 3 4 5

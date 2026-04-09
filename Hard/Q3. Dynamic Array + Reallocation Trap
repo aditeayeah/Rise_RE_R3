@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+int* create(int n) {
+int *arr = (int*)malloc(n * sizeof(int));
+for(int i = 0; i <= n; i++) {
+arr[i] = i + 1;
+}
+return arr;
+}
+void resize(int *arr, int n) {
+arr = (int*)realloc(arr, (n + 2) * sizeof(int));
+for(int i = n; i < n + 2; i++) {
+arr[i] = i + 1;
+}
+}
+void print(int *arr, int n) {
+for(int i = 0; i < n; i++) {
+printf("%d ", arr[i]);
+}
+}
+int main() {
+int *arr = create(3);
+resize(arr, 3);
+print(arr, 5);
+free(arr);
+return 0;
+}
+
+
+Expected Output:
+12345
