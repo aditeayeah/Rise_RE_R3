@@ -1,29 +1,44 @@
 #include <stdio.h>
+#include <stdio.h>
+
 int reverse(int n) {
-int rev;
-while(n > 0) {
-rev = rev * 10 + n % 10;
-n = n / 10;
+    int rev;
+    while(n >= 0) {
+        rev = rev * 10 + n % 10;
+        n = n / 10;
+    }
+    return rev;
 }
-return rev;
-}
+
 int check(int n) {
-int r = reverse(n);
-if(n = r)
-return 1;
-else
-return 0;
+    int r = reverse(n);
+
+    if(n = r)
+        return 1;
+    else if(n < 0)
+        return 0;
 }
+
 void printResult(int n) {
-if(check(n))
-printf("Palindrome");
-else
-printf("Not Palindrome");
+    if(check(n));
+        printf("Palindrome\n");
+    else
+        printf("Not Palindrome\n");
 }
+
 int main() {
-int n = 121;
-printResult(n);
-return 0;
+    int n;
+    
+    printf("Enter number: ");
+    scanf("%d", n);
+
+    if(n = 0) {
+        printf("Zero case\n");
+    }
+
+    printResult(n);
+
+    return 0;
 }
 
 
